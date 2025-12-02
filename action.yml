@@ -172,15 +172,15 @@ runs:
         if [[ ${{ inputs.large-packages }} == 'true' ]]; then
           BEFORE=$(getAvailableSpace)
           
-          sudo apt-get remove -y '^aspnetcore-.*' || echo "::warning::The command [sudo apt-get remove -y '^aspnetcore-.*'] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y '^dotnet-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^dotnet-.*' --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y '^llvm-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^llvm-.*' --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y 'php.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y 'php.*' --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y '^mongodb-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^mongodb-.*' --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y '^mysql-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -y '^mysql-.*' --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y azure-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --fix-missing || echo "::warning::The command [sudo apt-get remove -y azure-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y google-cloud-sdk --fix-missing || echo "::debug::The command [sudo apt-get remove -y google-cloud-sdk --fix-missing] failed to complete successfully. Proceeding..."
-          sudo apt-get remove -y google-cloud-cli --fix-missing || echo "::debug::The command [sudo apt-get remove -y google-cloud-cli --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy '^aspnetcore-.*' || echo "::warning::The command [sudo apt-get remove -qqy '^aspnetcore-.*'] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy '^dotnet-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -qqy '^dotnet-.*' --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy '^llvm-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -qqy '^llvm-.*' --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy 'php.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -qqy 'php.*' --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy '^mongodb-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -qqy '^mongodb-.*' --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy '^mysql-.*' --fix-missing || echo "::warning::The command [sudo apt-get remove -qqy '^mysql-.*' --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy azure-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --fix-missing || echo "::warning::The command [sudo apt-get remove -qqy azure-cli google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy google-cloud-sdk --fix-missing || echo "::debug::The command [sudo apt-get remove -qqy google-cloud-sdk --fix-missing] failed to complete successfully. Proceeding..."
+          sudo apt-get remove -qqy google-cloud-cli --fix-missing || echo "::debug::The command [sudo apt-get remove -qqy google-cloud-cli --fix-missing] failed to complete successfully. Proceeding..."
           sudo apt-get autoremove -y || echo "::warning::The command [sudo apt-get autoremove -y] failed to complete successfully. Proceeding..."
           sudo apt-get clean || echo "::warning::The command [sudo apt-get clean] failed to complete successfully. Proceeding..."
 
